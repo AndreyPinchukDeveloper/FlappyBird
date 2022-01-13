@@ -42,21 +42,24 @@ namespace FluppyBird
             Bird.Top += gravity;
             pipeButtom.Left -= pipeSpeed;
             pipeTop.Left -= pipeSpeed;
-            ScoreText.Text = score.ToString();
+            ScoreText.Text = "Score : "+score;
 
             if (pipeButtom.Left<-150)
             {
                 pipeButtom.Left = 650;
                 score++;
+                pipeSpeed++;
             }
             if (pipeTop.Left <-180)
             {
                 pipeTop.Left = 850;
                 score++;
+                pipeSpeed++;
             }
             if (Bird.Bounds.IntersectsWith(pipeButtom.Bounds)||
                 Bird.Bounds.IntersectsWith(pipeTop.Bounds)||
-                Bird.Bounds.IntersectsWith(ground.Bounds))
+                Bird.Bounds.IntersectsWith(ground.Bounds)||
+                Bird.Top<-25)
             {
                 EndGame();
             }
@@ -65,7 +68,7 @@ namespace FluppyBird
         private void EndGame()
         {
             gameTimer.Stop();
-            ScoreText.Text += "Game over";
+            ScoreText.Text = "Your score is: "+ score+ " Game over!";
         }
     }
 }
