@@ -45,7 +45,7 @@ namespace FluppyBird
             // pipeTop
             // 
             this.pipeTop.Image = global::FluppyBird.Properties.Resources.pipedown;
-            this.pipeTop.Location = new System.Drawing.Point(193, -4);
+            this.pipeTop.Location = new System.Drawing.Point(362, -3);
             this.pipeTop.Name = "pipeTop";
             this.pipeTop.Size = new System.Drawing.Size(100, 178);
             this.pipeTop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -65,7 +65,7 @@ namespace FluppyBird
             // pipeButtom
             // 
             this.pipeButtom.Image = global::FluppyBird.Properties.Resources.pipe;
-            this.pipeButtom.Location = new System.Drawing.Point(193, 347);
+            this.pipeButtom.Location = new System.Drawing.Point(325, 330);
             this.pipeButtom.Name = "pipeButtom";
             this.pipeButtom.Size = new System.Drawing.Size(100, 186);
             this.pipeButtom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -94,8 +94,9 @@ namespace FluppyBird
             // 
             // gameTimer
             // 
+            this.gameTimer.Enabled = true;
             this.gameTimer.Interval = 20;
-            this.gameTimer.Tick += new System.EventHandler(this.gameTimerEvent);
+            this.gameTimer.Tick += new System.EventHandler(this.newTimer);
             // 
             // Form1
             // 
